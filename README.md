@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
 [![Telegraf](https://img.shields.io/badge/Telegraf-v4-2AABEE.svg)](https://telegraf.js.org/)
 [![Node.js](https://img.shields.io/badge/NodeJS-Runtime-green.svg)](https://nodejs.org/)
-[![BunJS](https://img.shields.io/badge/BunJS-Toolchain-F9F1E1.svg?logo=bun&logoColor=000000)](https://bun.sh/)
+[![BunJS](https://img.shields.io/badge/BunJS-Toolchain-F9F1E1.svg)](https://bun.sh/)
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/wgtechlabs/devin-telegram-bot)
 [![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-181717?logo=github&logoColor=white)](https://github.com/wgtechlabs/devin-telegram-bot/pkgs/container/devin-telegram-bot)
 
