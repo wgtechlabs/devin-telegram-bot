@@ -1,17 +1,28 @@
 (() => {
 	const toggle = document.querySelector(".nav-toggle");
 	const header = document.querySelector(".header");
+	const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-	if (toggle) {
+	if (toggle && header) {
 		toggle.addEventListener("click", () => {
-			header.classList.toggle("nav-open");
+			const isOpen = header.classList.toggle("nav-open");
+			toggle.setAttribute("aria-expanded", String(isOpen));
 		});
 	}
 
-	for (const link of document.querySelectorAll(".nav-links a")) {
-		link.addEventListener("click", () => {
-			header.classList.remove("nav-open");
-		});
+	if (header) {
+		for (const link of document.querySelectorAll(".nav-links a")) {
+			link.addEventListener("click", () => {
+				header.classList.remove("nav-open");
+				if (toggle) {
+					toggle.setAttribute("aria-expanded", "false");
+				}
+			});
+		}
+	}
+
+	if (reduceMotion) {
+		return;
 	}
 
 	const observer = new IntersectionObserver(
