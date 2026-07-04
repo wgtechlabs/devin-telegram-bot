@@ -14,16 +14,13 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
-  packages: write
-  pull-requests: write
+  contents: read
   security-events: write
   actions: read
 
 jobs:
   build-flow:
-    uses: wgtechlabs/build-flow-action/.github/workflows/app.yml@v0.1.8
-    secrets: inherit
+    uses: wgtechlabs/build-flow-action/.github/workflows/app.yml@ebc4628565d40ae4e588222d9aa650073bd387bd
     with:
       ci-profile: auto
       ci-install-command: bun install --frozen-lockfile
