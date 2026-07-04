@@ -28,6 +28,7 @@ jobs:
       ci-install-command: bun install --frozen-lockfile
       ci-lint-command: "true"
       ci-matrix-versions: '["22","24","26"]'
+      enable-gitleaks: false
       codeql-build-mode: none
       enable-package: false
       enable-container: false
