@@ -8,7 +8,7 @@
 [![Telegraf](https://img.shields.io/badge/Telegraf-v4-2AABEE.svg)](https://telegraf.js.org/)
 [![Node.js](https://img.shields.io/badge/NodeJS-Runtime-green.svg)](https://nodejs.org/)
 
-Devin Telegram Bot is a self-hosted TypeScript integration that brings Devin AI into Telegram. Start a session from chat commands, continue the conversation in the same chat, and keep active session state persisted in PostgreSQL for restart recovery.
+Devin AI — Telegram Bot is a self-hosted TypeScript integration that brings Devin AI into Telegram. Start a session from chat commands, continue the conversation in the same chat, and keep active session state persisted in PostgreSQL for restart recovery.
 
 ## Features
 
@@ -146,7 +146,7 @@ This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow), [Cl
 - **Branches**: `main` (stable) + `dev` (integration) + feature branches
 - **Merge Strategy**: Feature branches squash-merge into `dev`, `dev` merges into `main`
 - **Commit Format**: `<emoji> <type>: <description>` (see Clean Commit)
-- **Labels**: 21 standardized labels across 5 categories (see `.github/labels.yml`)
+- **Labels**: 21 standardized labels across 5 categories (see Clean Labels)
 
 ## 🐛 Issues
 
@@ -164,7 +164,7 @@ Recognized my open-source contributions? [Nominate me](https://stars.github.com/
 
 ## 📋 Code of Conduct
 
-Read the project's [code of conduct](https://github.com/wgtechlabs/devin-telegram-bot/blob/main/CODE_OF_CONDUCT.md).
+This project follows [GitHub Community Guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines).
 
 ## 📃 License
 
