@@ -1,5 +1,5 @@
 import type { Context } from "telegraf";
-import { createSession } from "../services/devin-api.js";
+import { createSession, toUserFacingDevinError } from "../services/devin-api.js";
 import type { SessionManager } from "../services/session-manager.js";
 import type { BotConfig } from "../types/index.js";
 
@@ -19,7 +19,12 @@ export async function handleDevinStart(
 		return;
 	}
 
-	const created = await createSession(config.devinApiKey, task, config.devinOrgId);
-	await sessions.track(chatId, userId, created.session_id, created.url);
-	await ctx.reply(`Started session: ${created.url}`);
+	try {
+		const created = await createSession(config.devinApiKey, task, config.devinOrgId);
+		await sessions.track(chatId, userId, created.session_id, created.url);
+		await ctx.reply(`Started session: ${created.url}`);
+	} catch (error) {
+		await ctx.reply(toUserFacingDevinError(error, "start a session"));
+		throw error;
+	}
 }

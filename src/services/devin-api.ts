@@ -66,6 +66,25 @@ function extractRepository(prUrl: string): string {
 	return "Unknown repository";
 }
 
+export function toUserFacingDevinError(error: unknown, action: string): string {
+	const message = error instanceof Error ? error.message : String(error);
+	const normalized = message.toLowerCase();
+
+	if (normalized.includes("out_of_quota") || normalized.includes("billing error")) {
+		return `Failed to ${action}: Devin organization is out of quota (billing issue). Please update billing, then try again.`;
+	}
+
+	if (normalized.includes("401")) {
+		return `Failed to ${action}: Devin authentication failed (401). Check DEVIN_API_KEY and try again.`;
+	}
+
+	if (normalized.includes("403")) {
+		return `Failed to ${action}: Devin rejected the request (403). Check org access/permissions and try again.`;
+	}
+
+	return `Failed to ${action}: Devin is currently unavailable. Please try again.`;
+}
+
 export async function createSession(
 	apiKey: string,
 	prompt: string,

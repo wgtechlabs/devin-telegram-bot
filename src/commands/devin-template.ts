@@ -1,5 +1,5 @@
 import type { Context } from "telegraf";
-import { createSession } from "../services/devin-api.js";
+import { createSession, toUserFacingDevinError } from "../services/devin-api.js";
 import type { SessionManager } from "../services/session-manager.js";
 import { TEMPLATES, getTemplate } from "../templates/index.js";
 import type { BotConfig } from "../types/index.js";
@@ -32,7 +32,12 @@ export async function handleDevinTemplate(
 	}
 
 	const prompt = template.buildPrompt(details);
-	const created = await createSession(config.devinApiKey, prompt, config.devinOrgId);
-	await sessions.track(chatId, userId, created.session_id, created.url);
-	await ctx.reply(`Started template session (${template.name}): ${created.url}`);
+	try {
+		const created = await createSession(config.devinApiKey, prompt, config.devinOrgId);
+		await sessions.track(chatId, userId, created.session_id, created.url);
+		await ctx.reply(`Started template session (${template.name}): ${created.url}`);
+	} catch (error) {
+		await ctx.reply(toUserFacingDevinError(error, "start a template session"));
+		throw error;
+	}
 }
