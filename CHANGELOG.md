@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.1.3] - 2026-07-04
+
+### Changed
+
+- tighten error code typing for ci
+- reply to users on devin api failures
+- remove bunjs badge icon
+- add bunjs toolchain badge beside nodejs
+- use brand-style docker and github badges
+- add docker hub and github containers badges
+- retry state store init during db startup
+- externalize node packages in build output
+- improve launch logging and suppress deprecation warnings
+
 ## [0.1.2] - 2026-07-04
 
 ### Changed
