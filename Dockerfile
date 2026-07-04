@@ -11,8 +11,8 @@
 # 4. build        - Install dev dependencies and build the application
 # 5. final        - Create minimal runtime image with built app (no Bun)
 #
-# Usage:
-#   docker build -t devin-telegram-bot .
+# Usage (requires BuildKit because this Dockerfile uses RUN --mount=...):
+#   DOCKER_BUILDKIT=1 docker build -t devin-telegram-bot .
 #   docker run --env-file .env devin-telegram-bot
 # =============================================================================
 
@@ -120,8 +120,5 @@ COPY --from=build --chown=nodejs:nodejs /usr/src/app/dist ./dist
 USER nodejs
 
 # Use dumb-init for proper signal handling and start the application
-HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
-    CMD node -e "process.exit(0)"
-
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["node", "dist/index.js"]

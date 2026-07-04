@@ -22,8 +22,10 @@ permissions:
 
 jobs:
   build-flow:
-    uses: wgtechlabs/build-flow-action/.github/workflows/app.yml@v0.1.8
-    secrets: inherit
+    uses: wgtechlabs/build-flow-action/.github/workflows/app.yml@42d3c13ce0bcd0266eb1b4371b733ee84d926240 # v0.1.8
+    secrets:
+      DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+      DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     with:
       ci-profile: auto
       ci-install-command: bun install --frozen-lockfile
