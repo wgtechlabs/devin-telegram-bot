@@ -145,7 +145,7 @@ This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow), [Cl
 
 - **Branches**: `main` (stable) + `dev` (integration) + feature branches
 - **Branch Naming**: Use `feature/*`, `fix/*`, `docs/*`, `chore/*`, `test/*`, `refactor/*`
-- **Merge Strategy**: Feature branches squash-merge into `dev`, `dev` merges into `main`
+- **Merge Strategy**: `feature/*`, `fix/*`, `docs/*`, `chore/*`, `test/*`, `refactor/*` squash-merge into `dev`, `dev` merges into `main`
 - **Commit Format**: `<emoji> <type>: <description>` (see Clean Commit)
 - **Labels**: 21 standardized labels across 5 categories (see Clean Labels)
 
