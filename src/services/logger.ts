@@ -28,6 +28,24 @@ LogEngine.configure({
 	},
 });
 
+function normalizeLogData(value: unknown): unknown {
+	if (value instanceof Error) {
+		const normalized: Record<string, unknown> = {
+			name: value.name,
+			message: value.message,
+		};
+
+		if ("code" in value && value.code !== undefined) normalized.code = value.code;
+		if (value.stack) normalized.stack = value.stack;
+		if (value.cause !== undefined) normalized.cause = normalizeLogData(value.cause);
+
+		return normalized;
+	}
+
+	if (Array.isArray(value)) return value.map(normalizeLogData);
+	return value;
+}
+
 export function createLogger(scope: string) {
 	function emit(level: LogLevel, ...args: unknown[]): void {
 		let message = `[${scope}]`;
@@ -43,10 +61,12 @@ export function createLogger(scope: string) {
 			data = args;
 		}
 
-		if (level === "debug") return void LogEngine.debug(message, data);
-		if (level === "info") return void LogEngine.info(message, data);
-		if (level === "warn") return void LogEngine.warn(message, data);
-		return void LogEngine.error(message, data);
+		const payload = normalizeLogData(data);
+
+		if (level === "debug") return void LogEngine.debug(message, payload);
+		if (level === "info") return void LogEngine.info(message, payload);
+		if (level === "warn") return void LogEngine.warn(message, payload);
+		return void LogEngine.error(message, payload);
 	}
 
 	return {
