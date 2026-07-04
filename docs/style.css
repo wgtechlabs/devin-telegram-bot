@@ -392,8 +392,7 @@ code {
 	flex-direction: column;
 	gap: 10px;
 	background: var(--tg-chat-bg-alt);
-	background-image:
-		radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+	background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 	background-size: 14px 14px;
 	flex: 1;
 }
