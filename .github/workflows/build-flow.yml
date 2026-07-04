@@ -27,6 +27,7 @@ jobs:
     with:
       ci-profile: auto
       ci-install-command: bun install --frozen-lockfile
+      ci-lint-command: "true"
       ci-matrix-versions: '["22","24","26"]'
       codeql-build-mode: none
       enable-package: false
