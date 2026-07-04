@@ -5,6 +5,19 @@ interface RowShape {
 	payload: PersistedSession[];
 }
 
+const DB_INIT_MAX_ATTEMPTS = 20;
+const DB_INIT_RETRY_MS = 3_000;
+
+function wait(ms: number): Promise<void> {
+	return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export function isTransientDatabaseStartupError(error: unknown): boolean {
+	if (!error || typeof error !== "object") return false;
+	const code = "code" in error ? error.code : undefined;
+	return code === "57P03" || code === "ETIMEDOUT" || code === "ECONNREFUSED";
+}
+
 export class SessionStateStore {
 	private readonly pool: Pool;
 
@@ -17,13 +30,24 @@ export class SessionStateStore {
 	}
 
 	async init(): Promise<void> {
-		await this.pool.query(`
-			CREATE TABLE IF NOT EXISTS session_state (
-				id SMALLINT PRIMARY KEY CHECK (id = 1),
-				payload JSONB NOT NULL,
-				updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-			)
-		`);
+		for (let attempt = 1; attempt <= DB_INIT_MAX_ATTEMPTS; attempt++) {
+			try {
+				await this.pool.query(`
+					CREATE TABLE IF NOT EXISTS session_state (
+						id SMALLINT PRIMARY KEY CHECK (id = 1),
+						payload JSONB NOT NULL,
+						updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+					)
+				`);
+				return;
+			} catch (error) {
+				if (!isTransientDatabaseStartupError(error) || attempt === DB_INIT_MAX_ATTEMPTS) {
+					throw error;
+				}
+				// ponytail: startup DB can be briefly unavailable, retry instead of crash-looping
+				await wait(DB_INIT_RETRY_MS);
+			}
+		}
 	}
 
 	async load(): Promise<PersistedSession[]> {
