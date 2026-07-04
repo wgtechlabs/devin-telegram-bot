@@ -144,7 +144,8 @@ bun run build
 This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow), [Clean Commit](https://github.com/wgtechlabs/clean-commit), and [Clean Labels](https://github.com/wgtechlabs/clean-labels) conventions.
 
 - **Branches**: `main` (stable) + `dev` (integration) + feature branches
-- **Merge Strategy**: Feature branches squash-merge into `dev`, `dev` merges into `main`
+- **Branch Naming**: Use `feature/*`, `fix/*`, `docs/*`, `chore/*`, `test/*`, `refactor/*`
+- **Merge Strategy**: `feature/*`, `fix/*`, `docs/*`, `chore/*`, `test/*`, `refactor/*` squash-merge into `dev`, `dev` merges into `main`
 - **Commit Format**: `<emoji> <type>: <description>` (see Clean Commit)
 - **Labels**: 21 standardized labels across 5 categories (see Clean Labels)
 
