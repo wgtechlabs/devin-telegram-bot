@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devin AI - Telegram Bot - Self-Hosted Telegram Bot for Devin AI</title>
+  <meta name="description" content="Bring Devin AI directly into Telegram. Launch coding sessions with chat commands, continue the conversation in the same chat, and handle tasks like PRs, tests, and bug fixes without leaving your chats." />
+  <meta property="og:title" content="Devin AI - Telegram Bot" />
+  <meta property="og:description" content="Self-hosted Telegram bot integration for Devin AI. Launch coding sessions with a /devin command." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wgtechlabs.github.io/devin-telegram-bot/" />
+  <meta property="og:image" content="https://wgtechlabs.github.io/devin-telegram-bot/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Devin AI Telegram Bot" />
+  <meta name="twitter:description" content="Self-hosted Telegram bot integration for Devin AI." />
+  <meta name="twitter:image" content="https://wgtechlabs.github.io/devin-telegram-bot/og-image.png" />
+  <link rel="icon" type="image/png" href="devin_icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav-logo">
+        <img src="devin_icon.png" alt="Devin" class="nav-logo-icon" width="32" height="32" />
+        <span class="nav-logo-text">Devin AI</span>
+        <span class="nav-logo-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram Bot</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#commands">Commands</a></li>
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#tech-stack">Tech Stack</a></li>
+        <li><a href="#sponsor">Sponsor</a></li>
+        <li><a href="#quick-start">Quick Start</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://github.com/wgtechlabs/devin-telegram-bot" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://railway.com/deploy/devin-ai-telegram-bot?referralCode=dTwT-i&utm_medium=integration&utm_source=wgtechlabs.com%2Fdevin-telegram-bot&utm_campaign=generic" class="railway-link railway-link-nav" target="_blank" rel="noopener noreferrer" aria-label="Deploy on Railway">
+          <img src="https://railway.com/button.svg" alt="Deploy on Railway" class="railway-btn railway-btn-nav" />
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">Open Source &middot; Self-Hosted &middot; TypeScript</div>
+          <h1 class="hero-title">Bring <span class="highlight">Devin AI</span> to your Telegram Chats or Groups</h1>
+          <p class="hero-subtitle">Launch coding sessions with a /devin command, continue the conversation in the same chat with adaptive polling, and handle PRs, tests, and bug fixes without leaving your chats.</p>
+          <div class="hero-actions">
+            <a href="#quick-start" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="https://github.com/wgtechlabs/devin-telegram-bot" class="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="telegram-mock">
+            <div class="telegram-mock-header">
+              <span class="telegram-mock-avatar"><img src="devin_icon.png" alt="Devin" /></span>
+              <div class="telegram-mock-meta">
+                <span class="telegram-mock-title">Devin AI <span class="bot-tag">bot</span></span>
+                <span class="telegram-mock-status">bot &middot; online</span>
+              </div>
+              <span class="telegram-mock-menu">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 8a2 2 0 100-4 2 2 0 000 4zm0 6a2 2 0 100-4 2 2 0 000 4zm0 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+              </span>
+            </div>
+            <div class="telegram-mock-body">
+              <div class="telegram-msg telegram-msg-in">
+                <div class="telegram-msg-bubble">
+                  <span class="telegram-msg-author user-color">warengonzaga</span>
+                  <p><code class="cmd">/devin Write a Python script that fetches top stories from Hacker News</code></p>
+                  <span class="telegram-msg-time">10:42 AM</span>
+                </div>
+              </div>
+              <div class="telegram-msg telegram-msg-out">
+                <div class="telegram-msg-bubble">
+                  <p>On it! Writing a Python script to fetch top stories from the Hacker News API now. 🚀</p>
+                  <span class="telegram-msg-time">10:42 AM</span>
+                </div>
+              </div>
+              <div class="telegram-session-card">
+                <div class="telegram-session-bar working"></div>
+                <div class="telegram-session-content">
+                  <p class="telegram-session-title">Session started</p>
+                  <p class="telegram-session-status"><span class="status-dot-mini working-dot"></span> Working &middot; fetching from Hacker News API</p>
+                  <div class="telegram-session-btnrow">
+                    <a href="#" class="telegram-session-link">Open web app</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="telegram-mock-footer">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              <span class="telegram-mock-input">Message</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Features</h2>
+          <p>Everything you need to integrate Devin AI into your Telegram workflow</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Chat Commands</h3>
+            <p>Start sessions, reply, stop, list active sessions, and use templates with intuitive slash commands.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>In-Chat Continuation</h3>
+            <p>Non-command text in a chat with an active session is automatically forwarded to Devin.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔁</div>
+            <h3>Adaptive Polling</h3>
+            <p>Fast updates during active work, slower when idle. Efficient and always up to date.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Template System</h3>
+            <p>Pre-built templates for common tasks: PRs, code reviews, tests, and bug fixes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <h3>PR Notifications</h3>
+            <p>Shares pull request URLs from Devin sessions directly back into the chat.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Customizable Bot Name</h3>
+            <p>Set <code>BOT_NAME</code> to customize how the bot refers to Devin in user-facing text.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Restart Recovery</h3>
+            <p>Active session state survives bot restarts via PostgreSQL persistence.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏠</div>
+            <h3>Self-Hosted</h3>
+            <p>Full control over your data and deployment. Run it on your own infrastructure.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h3>Group & DM Support</h3>
+            <p>Works in one-on-one DMs and group chats, tracking sessions per chat context.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commands" class="section commands-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Commands</h2>
+          <p>Interact with Devin directly from Telegram</p>
+        </div>
+        <div class="commands-grid">
+          <div class="command-card">
+            <code class="command-name">/devin &lt;task&gt;</code>
+            <p>Start a new Devin session with a freeform task description</p>
+          </div>
+          <div class="command-card">
+            <code class="command-name">/template &lt;id&gt; &lt;details&gt;</code>
+            <p>Start a session from a pre-built template for common workflows</p>
+          </div>
+          <div class="command-card">
+            <code class="command-name">/reply &lt;message&gt;</code>
+            <p>Send a follow-up message to Devin in the active session</p>
+          </div>
+          <div class="command-card">
+            <code class="command-name">/stop</code>
+            <p>Terminate the active session in the current chat</p>
+          </div>
+          <div class="command-card">
+            <code class="command-name">/sessions</code>
+            <p>List all currently active Devin sessions being tracked</p>
+          </div>
+          <div class="command-card">
+            <code class="command-name">free text</code>
+            <p>Type any non-command message in a chat with an active session to continue the conversation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="templates" class="section templates-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Templates</h2>
+          <p>Get started quickly with pre-built prompts for common tasks</p>
+        </div>
+        <div class="templates-grid">
+          <div class="template-card">
+            <div class="template-icon">🔀</div>
+            <h3>Open a PR</h3>
+            <p>Write code and open a pull request with a single command.</p>
+            <code class="template-id">open-pr</code>
+          </div>
+          <div class="template-card">
+            <div class="template-icon">🔍</div>
+            <h3>Code Review</h3>
+            <p>Review an existing pull request for issues and suggestions.</p>
+            <code class="template-id">code-review</code>
+          </div>
+          <div class="template-card">
+            <div class="template-icon">🧪</div>
+            <h3>Write Tests</h3>
+            <p>Add test coverage to your repository quickly and efficiently.</p>
+            <code class="template-id">write-tests</code>
+          </div>
+          <div class="template-card">
+            <div class="template-icon">🐛</div>
+            <h3>Fix a Bug</h3>
+            <p>Investigate and fix bugs with Devin's help.</p>
+            <code class="template-id">fix-bug</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="status" class="section status-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Status Indicators</h2>
+          <p>Always know what Devin is doing with color-coded session states</p>
+        </div>
+        <div class="status-grid">
+          <div class="status-card">
+            <div class="status-dot working-dot"></div>
+            <div class="status-info">
+              <h3>Working</h3>
+              <p>Devin is actively working on your task</p>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="status-dot blocked-dot"></div>
+            <div class="status-info">
+              <h3>Blocked</h3>
+              <p>Devin needs input or clarification</p>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="status-dot finished-dot"></div>
+            <div class="status-info">
+              <h3>Finished</h3>
+              <p>Task completed successfully</p>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="status-dot error-dot"></div>
+            <div class="status-info">
+              <h3>Error</h3>
+              <p>Session expired, stopped, or failed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech-stack" class="section tech-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tech Stack</h2>
+          <p>Built with modern, reliable technologies</p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tech-label">Language</div>
+            <div class="tech-value">TypeScript 5.8+</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-label">Runtime</div>
+            <div class="tech-value">Node.js 22+</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-label">Framework</div>
+            <div class="tech-value">Telegraf v4</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-label">Toolchain</div>
+            <div class="tech-value">Bun</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-label">Linter</div>
+            <div class="tech-value">Biome</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-label">Database</div>
+            <div class="tech-value">PostgreSQL 14+</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-label">Testing</div>
+            <div class="tech-value">Bun Test</div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-label">Storage</div>
+            <div class="tech-value">pg</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quick-start" class="section quickstart-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quick Start</h2>
+          <p>Get up and running in minutes</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Clone and install</h3>
+              <pre><code>git clone https://github.com/wgtechlabs/devin-telegram-bot.git
+cd devin-telegram-bot
+bun install</code></pre>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Configure</h3>
+              <pre><code>cp .env.example .env</code></pre>
+              <p>Edit <code>.env</code> with your Telegram bot token (from <a href="https://t.me/BotFather" target="_blank" rel="noopener noreferrer">@BotFather</a>), database URL, and Devin API key.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Run</h3>
+              <pre><code># Development (with hot reload)
+bun run dev
+
+# Production
+bun run build
+bun run start</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="quickstart-deploy">
+          <p>Or deploy instantly with one click:</p>
+          <a href="https://railway.com/deploy/devin-ai-telegram-bot?referralCode=dTwT-i&utm_medium=integration&utm_source=wgtechlabs.com%2Fdevin-telegram-bot&utm_campaign=generic" class="railway-link" target="_blank" rel="noopener noreferrer" aria-label="Deploy on Railway">
+            <img src="https://railway.com/button.svg" alt="Deploy on Railway" class="railway-btn" />
+          </a>
+          <p class="support-note">Deploying via Railway directly supports the project and ongoing maintenance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsor" class="section sponsor-section">
+      <div class="container">
+        <div class="sponsor-backdrop" aria-hidden="true">
+          <span class="sponsor-float sponsor-float-heart">❤</span>
+          <span class="sponsor-float sponsor-float-money">💸</span>
+          <span class="sponsor-float sponsor-float-heart-alt">💖</span>
+          <span class="sponsor-float sponsor-float-coffee">☕</span>
+          <span class="sponsor-float sponsor-float-magic">✨</span>
+          <span class="sponsor-float sponsor-float-coin">🪙</span>
+          <span class="sponsor-float sponsor-float-spark">💫</span>
+          <span class="sponsor-float sponsor-float-gift">🎁</span>
+          <span class="sponsor-float sponsor-float-heart-small">💝</span>
+          <span class="sponsor-float sponsor-float-bill">💰</span>
+        </div>
+        <div class="section-header sponsor-header">
+          <h2>Support this open source project</h2>
+          <p>Want to support this open source project and help keep Devin AI moving forward? Here’s how:</p>
+        </div>
+
+        <div class="sponsor-grid">
+          <div class="sponsor-card-shell sponsor-card-shell-github">
+            <div class="sponsor-card-ring" aria-hidden="true">
+              <div class="sponsor-card-ring-spin"></div>
+            </div>
+            <article class="sponsor-card sponsor-card-github">
+              <div class="sponsor-icon">❤</div>
+              <h3>GitHub Sponsors</h3>
+              <p>Become a sponsor and help fund ongoing open source development.</p>
+              <a href="https://github.com/sponsors/wgtechlabs" class="sponsor-button sponsor-button-github" target="_blank" rel="noopener noreferrer">
+                Become a Sponsor
+              </a>
+            </article>
+          </div>
+
+          <div class="sponsor-card-shell sponsor-card-shell-coffee">
+            <div class="sponsor-card-ring" aria-hidden="true">
+              <div class="sponsor-card-ring-spin"></div>
+            </div>
+            <article class="sponsor-card sponsor-card-coffee">
+              <div class="sponsor-icon">☕</div>
+              <h3>Buy Me a Coffee</h3>
+              <p>A one-time coffee is a simple way to say thanks and keep this project going.</p>
+              <a href="https://buymeacoffee.com/wgtechlabs" class="sponsor-button sponsor-button-coffee" target="_blank" rel="noopener noreferrer">
+                Buy Me a Coffee
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to bring Devin AI to your Telegram?</h2>
+          <p>Open source, self-hosted, and built for developer teams.</p>
+          <p class="support-note">Using Railway to deploy helps support this project directly.</p>
+          <div class="cta-actions">
+            <a href="https://github.com/wgtechlabs/devin-telegram-bot" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              Get Started on GitHub
+            </a>
+            <a href="https://railway.com/deploy/devin-ai-telegram-bot?referralCode=dTwT-i&utm_medium=integration&utm_source=wgtechlabs.com%2Fdevin-telegram-bot&utm_campaign=generic" class="railway-link" target="_blank" rel="noopener noreferrer" aria-label="Deploy on Railway">
+              <img src="https://railway.com/button.svg" alt="Deploy on Railway" class="railway-btn" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-column footer-brand-column">
+          <div class="footer-brand">
+            <img src="devin_icon.png" alt="Devin" class="nav-logo-icon" width="28" height="28" />
+            <span class="footer-brand-text">Devin AI</span>
+            <span class="nav-logo-badge"><svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram Bot</span>
+          </div>
+          <p class="footer-description">Bring Devin AI into your chats with a self-hosted Telegram bot built for engineering teams.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Project</h3>
+          <a href="https://github.com/wgtechlabs/devin-telegram-bot" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <a href="https://github.com/wgtechlabs/devin-telegram-bot/issues" target="_blank" rel="noopener noreferrer">Report an Issue</a>
+          <a href="https://github.com/wgtechlabs/devin-telegram-bot/blob/main/README.md#contributing" target="_blank" rel="noopener noreferrer">Contributing Guide</a>
+          <a href="https://github.com/wgtechlabs/devin-telegram-bot/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Follow</h3>
+          <a href="https://github.com/wgtechlabs" target="_blank" rel="noopener noreferrer">@wgtechlabs on GitHub</a>
+          <a href="https://wgtechlabs.com" target="_blank" rel="noopener noreferrer">wgtechlabs.com</a>
+          <a href="https://github.com/sponsors/wgtechlabs" target="_blank" rel="noopener noreferrer">Sponsor on GitHub</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 <a href="https://wgtechlabs.com" target="_blank" rel="noopener noreferrer">WG Technology Labs</a>. Licensed under GPL-3.0.</p>
+        <p class="footer-bottom-made">🖥️💖☕ by <a href="https://warengonzaga.com" target="_blank" rel="noopener noreferrer">Waren Gonzaga</a> &amp; <a href="https://www.youtube.com/watch?v=VOZbswniA-g" target="_blank" rel="noopener noreferrer">YHWH</a> 🙏 &mdash; Without <em>Him</em>, none of this exists, <strong>even me</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
