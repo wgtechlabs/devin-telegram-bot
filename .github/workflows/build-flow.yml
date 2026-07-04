@@ -1,0 +1,33 @@
+name: Build Flow
+
+on:
+  pull_request:
+    branches: [dev, main]
+  push:
+    branches: [dev, main]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+concurrency:
+  group: build-flow-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+  security-events: write
+  actions: read
+
+jobs:
+  build-flow:
+    uses: wgtechlabs/build-flow-action/.github/workflows/app.yml@v0.1.8
+    secrets: inherit
+    with:
+      ci-profile: auto
+      ci-install-command: bun install --frozen-lockfile
+      ci-matrix-versions: '["22","24","26"]'
+      codeql-build-mode: none
+      enable-package: false
+      enable-container: false
