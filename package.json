@@ -6,7 +6,7 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"dev": "bun run --watch src/index.ts",
-		"build": "bun build src/index.ts --outdir dist --target node",
+		"build": "bun build src/index.ts --outdir dist --target node --packages external",
 		"start": "node --no-deprecation dist/index.js",
 		"lint": "biome check .",
 		"lint:fix": "biome check --write .",
