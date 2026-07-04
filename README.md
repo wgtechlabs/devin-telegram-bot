@@ -141,11 +141,12 @@ bun run build
 
 ## Workflow
 
-This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow) and [Clean Commit](https://github.com/wgtechlabs/clean-commit) conventions.
+This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow), [Clean Commit](https://github.com/wgtechlabs/clean-commit), and [Clean Labels](https://github.com/wgtechlabs/clean-labels) conventions.
 
 - **Branches**: `main` (stable) + `dev` (integration) + feature branches
 - **Merge Strategy**: Feature branches squash-merge into `dev`, `dev` merges into `main`
-- **Commit Format**: `<emoji> <type>: <description>`
+- **Commit Format**: `<emoji> <type>: <description>` (see Clean Commit)
+- **Labels**: 21 standardized labels across 5 categories (see `.github/labels.yml`)
 
 ## 🐛 Issues
 
@@ -157,7 +158,13 @@ Like this project? Leave a star! ⭐⭐⭐⭐⭐
 
 Want to support my work and get some perks? [Become a sponsor](https://github.com/sponsors/warengonzaga)! 💖
 
-Or, [buy me a coffee](https://buymeacoffee.com/warengonzaga)! ☕
+Or, you just love what I do? [Buy me a coffee](https://buymeacoffee.com/warengonzaga)! ☕
+
+Recognized my open-source contributions? [Nominate me](https://stars.github.com/nominate) as GitHub Star! 💫
+
+## 📋 Code of Conduct
+
+Read the project's [code of conduct](https://github.com/wgtechlabs/devin-telegram-bot/blob/main/CODE_OF_CONDUCT.md).
 
 ## 📃 License
 
@@ -165,8 +172,10 @@ This project is licensed under [GNU General Public License v3.0](https://www.gnu
 
 ## 📝 Author
 
-This project is created by [Waren Gonzaga](https://github.com/warengonzaga).
+This project is created by [Waren Gonzaga](https://github.com/warengonzaga), with the help of awesome [contributors](https://github.com/wgtechlabs/devin-telegram-bot/graphs/contributors).
+
+[![contributors](https://contrib.rocks/image?repo=wgtechlabs/devin-telegram-bot)](https://github.com/wgtechlabs/devin-telegram-bot/graphs/contributors)
 
 ---
 
-💻💖☕ by [Waren Gonzaga](https://warengonzaga.com) | [YHWH](https://www.youtube.com/watch?v=VOZbswniA-g) 🙏
+💻💖☕ by [Waren Gonzaga](https://warengonzaga.com) | [YHWH](https://www.youtube.com/watch?v=VOZbswniA-g) 🙏 - Without _Him_, none of this exists, _even me_.
