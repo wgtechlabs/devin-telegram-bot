@@ -14,7 +14,9 @@ function wait(ms: number): Promise<void> {
 
 export function isTransientDatabaseStartupError(error: unknown): boolean {
 	if (!error || typeof error !== "object") return false;
-	const code = "code" in error ? error.code : undefined;
+	const codeValue = (error as { code?: unknown }).code;
+	const code =
+		typeof codeValue === "string" || typeof codeValue === "number" ? codeValue : undefined;
 	return code === "57P03" || code === "ETIMEDOUT" || code === "ECONNREFUSED";
 }
 

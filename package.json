@@ -1,51 +1,51 @@
 {
-  "name": "devin-telegram-bot",
-  "version": "0.1.2",
-  "description": "Self-hosted Telegram bot integration for Devin AI",
-  "type": "module",
-  "main": "dist/index.js",
-  "scripts": {
-    "dev": "bun run --watch src/index.ts",
-    "build": "bun build src/index.ts --outdir dist --target node --packages external",
-    "start": "node --no-deprecation dist/index.js",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format --write .",
-    "typecheck": "tsc --noEmit",
-    "test": "bun test"
-  },
-  "keywords": [
-    "telegram",
-    "bot",
-    "devin",
-    "ai",
-    "typescript",
-    "telegraf",
-    "self-hosted",
-    "automation"
-  ],
-  "author": "WG Tech Labs",
-  "license": "GPL-3.0-or-later",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wgtechlabs/devin-telegram-bot.git"
-  },
-  "homepage": "https://github.com/wgtechlabs/devin-telegram-bot",
-  "bugs": {
-    "url": "https://github.com/wgtechlabs/devin-telegram-bot/issues"
-  },
-  "engines": {
-    "node": ">=22.0.0"
-  },
-  "dependencies": {
-    "@wgtechlabs/log-engine": "2.3.1",
-    "pg": "^8.22.0",
-    "telegraf": "^4.16.3"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@types/bun": "^1.2.14",
-    "@types/pg": "^8.20.0",
-    "typescript": "^5.8.3"
-  }
+	"name": "devin-telegram-bot",
+	"version": "0.1.2",
+	"description": "Self-hosted Telegram bot integration for Devin AI",
+	"type": "module",
+	"main": "dist/index.js",
+	"scripts": {
+		"dev": "bun run --watch src/index.ts",
+		"build": "bun build src/index.ts --outdir dist --target node --packages external",
+		"start": "node --no-deprecation dist/index.js",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write .",
+		"typecheck": "tsc --noEmit",
+		"test": "bun test"
+	},
+	"keywords": [
+		"telegram",
+		"bot",
+		"devin",
+		"ai",
+		"typescript",
+		"telegraf",
+		"self-hosted",
+		"automation"
+	],
+	"author": "WG Tech Labs",
+	"license": "GPL-3.0-or-later",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wgtechlabs/devin-telegram-bot.git"
+	},
+	"homepage": "https://github.com/wgtechlabs/devin-telegram-bot",
+	"bugs": {
+		"url": "https://github.com/wgtechlabs/devin-telegram-bot/issues"
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"dependencies": {
+		"@wgtechlabs/log-engine": "2.3.1",
+		"pg": "^8.22.0",
+		"telegraf": "^4.16.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/bun": "^1.2.14",
+		"@types/pg": "^8.20.0",
+		"typescript": "^5.8.3"
+	}
 }

@@ -30,12 +30,15 @@ LogEngine.configure({
 
 function normalizeLogData(value: unknown): unknown {
 	if (value instanceof Error) {
+		const valueWithCode = value as Error & { code?: unknown };
 		const normalized: Record<string, unknown> = {
 			name: value.name,
 			message: value.message,
 		};
 
-		if ("code" in value && value.code !== undefined) normalized.code = value.code;
+		if (typeof valueWithCode.code === "string" || typeof valueWithCode.code === "number") {
+			normalized.code = valueWithCode.code;
+		}
 		if (value.stack) normalized.stack = value.stack;
 		if (value.cause !== undefined) normalized.cause = normalizeLogData(value.cause);
 
