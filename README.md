@@ -1,14 +1,14 @@
-# Devin Telegram Bot
+# Devin AI — Telegram Bot
 
-[![Devin Telegram Bot – GitHub Repo Banner](https://ghrb.waren.build/banner?header=Devin+Telegram+Bot+%F0%9F%A4%96&subheader=Self-hosted+Telegram+bot+integration+for+Devin+AI&bg=013B84-016EEA&color=FFFFFF)](https://github.com/wgtechlabs/devin-telegram-bot)
+![GitHub Repo Banner](https://ghrb.waren.build/banner?header=Devin+AI+%E2%80%94+Telegram+Bot+%21%5Btelegram%5D&subheader=Bring+your+AI+software+engineer+to+your+Telegram&bg=013B84-016EEA&color=FFFFFF&headerfont=Inter&subheaderfont=Kinewave&watermarkpos=bottom-right)
 <!-- Created with GitHub Repo Banner by Waren Gonzaga: https://ghrb.waren.build -->
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
 [![Telegraf](https://img.shields.io/badge/Telegraf-v4-2AABEE.svg)](https://telegraf.js.org/)
-[![Bun](https://img.shields.io/badge/Bun-Runtime-f472b6.svg)](https://bun.sh/)
+[![Node.js](https://img.shields.io/badge/NodeJS-Runtime-green.svg)](https://nodejs.org/)
 
-Devin Telegram Bot is a self-hosted TypeScript integration that brings Devin AI into Telegram. Start a session from chat commands, continue the conversation in the same chat, and keep active session state persisted in PostgreSQL for restart recovery.
+Devin AI — Telegram Bot is a self-hosted TypeScript integration that brings Devin AI into Telegram. Start a session from chat commands, continue the conversation in the same chat, and keep active session state persisted in PostgreSQL for restart recovery.
 
 ## Features
 
@@ -141,11 +141,12 @@ bun run build
 
 ## Workflow
 
-This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow) and [Clean Commit](https://github.com/wgtechlabs/clean-commit) conventions.
+This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow), [Clean Commit](https://github.com/wgtechlabs/clean-commit), and [Clean Labels](https://github.com/wgtechlabs/clean-labels) conventions.
 
 - **Branches**: `main` (stable) + `dev` (integration) + feature branches
 - **Merge Strategy**: Feature branches squash-merge into `dev`, `dev` merges into `main`
-- **Commit Format**: `<emoji> <type>: <description>`
+- **Commit Format**: `<emoji> <type>: <description>` (see Clean Commit)
+- **Labels**: 21 standardized labels across 5 categories (see Clean Labels)
 
 ## 🐛 Issues
 
@@ -157,7 +158,13 @@ Like this project? Leave a star! ⭐⭐⭐⭐⭐
 
 Want to support my work and get some perks? [Become a sponsor](https://github.com/sponsors/warengonzaga)! 💖
 
-Or, [buy me a coffee](https://buymeacoffee.com/warengonzaga)! ☕
+Or, you just love what I do? [Buy me a coffee](https://buymeacoffee.com/warengonzaga)! ☕
+
+Recognized my open-source contributions? [Nominate me](https://stars.github.com/nominate) as GitHub Star! 💫
+
+## 📋 Code of Conduct
+
+This project follows [GitHub Community Guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines).
 
 ## 📃 License
 
@@ -165,8 +172,10 @@ This project is licensed under [GNU General Public License v3.0](https://www.gnu
 
 ## 📝 Author
 
-This project is created by [Waren Gonzaga](https://github.com/warengonzaga).
+This project is created by [Waren Gonzaga](https://github.com/warengonzaga), with the help of awesome [contributors](https://github.com/wgtechlabs/devin-telegram-bot/graphs/contributors).
+
+[![contributors](https://contrib.rocks/image?repo=wgtechlabs/devin-telegram-bot)](https://github.com/wgtechlabs/devin-telegram-bot/graphs/contributors)
 
 ---
 
-💻💖☕ by [Waren Gonzaga](https://warengonzaga.com) | [YHWH](https://www.youtube.com/watch?v=VOZbswniA-g) 🙏
+💻💖☕ by [Waren Gonzaga](https://warengonzaga.com) | [YHWH](https://www.youtube.com/watch?v=VOZbswniA-g) 🙏 - Without _Him_, none of this exists, _even me_.
