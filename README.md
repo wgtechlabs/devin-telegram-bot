@@ -7,6 +7,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
 [![Telegraf](https://img.shields.io/badge/Telegraf-v4-2AABEE.svg)](https://telegraf.js.org/)
 [![Node.js](https://img.shields.io/badge/NodeJS-Runtime-green.svg)](https://nodejs.org/)
+[![Docker Hub](https://img.shields.io/docker/v/wgtechlabs/devin-telegram-bot?label=Docker%20Hub&logo=docker)](https://hub.docker.com/r/wgtechlabs/devin-telegram-bot)
+[![GitHub Containers](https://img.shields.io/github/v/release/wgtechlabs/devin-telegram-bot?label=GitHub%20Containers&logo=github)](https://github.com/wgtechlabs/devin-telegram-bot/pkgs/container/devin-telegram-bot)
 
 Devin AI — Telegram Bot is a self-hosted TypeScript integration that brings Devin AI into Telegram. Start a session from chat commands, continue the conversation in the same chat, and keep active session state persisted in PostgreSQL for restart recovery.
 
