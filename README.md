@@ -10,6 +10,12 @@
 
 Devin AI — Telegram Bot is a self-hosted TypeScript integration that brings Devin AI into Telegram. Start a session from chat commands, continue the conversation in the same chat, and keep active session state persisted in PostgreSQL for restart recovery.
 
+## Deploy Your Own
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/devin-ai-telegram-bot?referralCode=dTwT-i&utm_medium=integration&utm_source=template&utm_campaign=generic)
+
+Deploy your own copy and support the project. 💖
+
 ## Features
 
 - **Telegram Commands** — `/devin`, `/reply`, `/stop`, `/sessions`, `/template`
