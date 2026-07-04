@@ -102,7 +102,7 @@ FROM base AS final
 
 # Set production environment with security options
 ENV NODE_ENV=production \
-    NODE_OPTIONS="--enable-source-maps --max-old-space-size=512" \
+    NODE_OPTIONS="--enable-source-maps --max-old-space-size=512 --no-deprecation" \
     HOME=/tmp
 
 # Create a dedicated user for the application

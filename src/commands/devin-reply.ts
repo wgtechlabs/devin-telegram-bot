@@ -1,5 +1,5 @@
 import type { Context } from "telegraf";
-import { sendMessage } from "../services/devin-api.js";
+import { sendMessage, toUserFacingDevinError } from "../services/devin-api.js";
 import type { SessionManager } from "../services/session-manager.js";
 import type { BotConfig } from "../types/index.js";
 
@@ -26,6 +26,11 @@ export async function handleDevinReply(
 		return;
 	}
 
-	await sendMessage(config.devinApiKey, session.sessionId, message, config.devinOrgId);
-	await ctx.reply("Message sent.");
+	try {
+		await sendMessage(config.devinApiKey, session.sessionId, message, config.devinOrgId);
+		await ctx.reply("Message sent.");
+	} catch (error) {
+		await ctx.reply(toUserFacingDevinError(error, "send the message"));
+		throw error;
+	}
 }
