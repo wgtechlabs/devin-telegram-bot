@@ -158,31 +158,46 @@ This project follows [Clean Flow](https://github.com/wgtechlabs/clean-flow), [Cl
 - **Commit Format**: `<emoji> <type>: <description>` (see Clean Commit)
 - **Labels**: 21 standardized labels across 5 categories (see Clean Labels)
 
-## 🐛 Issues
+## 💬 Community Discussions
 
-Please report issues by [creating a new issue](https://github.com/wgtechlabs/devin-telegram-bot/issues/new/choose).
+Join our community discussions to get help, share ideas, and connect with other users:
 
-## 🙏 Sponsor
+- 📣 **[Announcements](https://github.com/wgtechlabs/devin-telegram-bot/discussions/categories/announcements)**: Official updates from the maintainer
+- 📸 **[Showcase](https://github.com/wgtechlabs/devin-telegram-bot/discussions/categories/showcase)**: Show and tell your implementation
+- 💖 **[Wall of Love](https://github.com/wgtechlabs/devin-telegram-bot/discussions/categories/wall-of-love)**: Share your experience with the bot
+- 🛟 **[Help & Support](https://github.com/wgtechlabs/devin-telegram-bot/discussions/categories/help-support)**: Get assistance from the community
+- 🧠 **[Ideas](https://github.com/wgtechlabs/devin-telegram-bot/discussions/categories/ideas)**: Suggest new features and improvements
 
-Like this project? Leave a star! ⭐⭐⭐⭐⭐
+## 🛟 Help & Support
 
-Want to support my work and get some perks? [Become a sponsor](https://github.com/sponsors/warengonzaga)! 💖
+Need help? Check our [Help & Support](https://github.com/wgtechlabs/devin-telegram-bot/discussions/categories/help-support) discussions or [create a new issue](https://github.com/wgtechlabs/devin-telegram-bot/issues/new/choose).
 
-Or, you just love what I do? [Buy me a coffee](https://buymeacoffee.com/warengonzaga)! ☕
+## 🎯 Contributing
 
-Recognized my open-source contributions? [Nominate me](https://stars.github.com/nominate) as GitHub Star! 💫
+**Important**: All pull requests must be submitted to the `dev` branch. PRs to `main` will be automatically rejected.
 
-## 📋 Code of Conduct
+Contributions are welcome! Your code must pass `bun run typecheck` before merging.
 
-This project follows [GitHub Community Guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines).
+## 💖 Sponsors
+
+Like this project? **Leave a star**! ⭐⭐⭐⭐⭐
+
+There are several ways you can support this project:
+
+- [Become a sponsor](https://github.com/sponsors/wgtechlabs) and get some perks! 💖
+- [Buy me a coffee](https://buymeacoffee.com/wgtechlabs) if you just love what we do! ☕
+
+## ⭐ GitHub Star Nomination
+
+Found this project helpful? Consider nominating me **(@warengonzaga)** for the [GitHub Star program](https://stars.github.com/nominate/)! This recognition supports ongoing development of this project and [my other open-source projects](https://github.com/warengonzaga?tab=repositories). GitHub Stars are recognized for their significant contributions to the developer community — your nomination makes a difference and encourages continued innovation!
 
 ## 📃 License
 
-This project is licensed under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
+This project is licensed under the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
 
 ## 📝 Author
 
-This project is created by [Waren Gonzaga](https://github.com/warengonzaga), with the help of awesome [contributors](https://github.com/wgtechlabs/devin-telegram-bot/graphs/contributors).
+This project is created by **[Waren Gonzaga](https://github.com/warengonzaga)** under [WG Technology Labs](https://github.com/wgtechlabs), with the help of awesome [contributors](https://github.com/wgtechlabs/devin-telegram-bot/graphs/contributors).
 
 [![contributors](https://contrib.rocks/image?repo=wgtechlabs/devin-telegram-bot)](https://github.com/wgtechlabs/devin-telegram-bot/graphs/contributors)
 
