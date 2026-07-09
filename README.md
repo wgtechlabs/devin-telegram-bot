@@ -193,7 +193,7 @@ Found this project helpful? Consider nominating me **(@warengonzaga)** for the [
 
 ## 📃 License
 
-This project is licensed under the [GNU General Public License v3.0 or later](https://opensource.org/license/gpl-3-0).
+This project is licensed under [GPL-3.0-or-later](https://spdx.org/licenses/GPL-3.0-or-later.html).
 
 ## 📝 Author
 
