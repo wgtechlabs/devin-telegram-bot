@@ -174,7 +174,7 @@ Need help? Check our [Help & Support](https://github.com/wgtechlabs/devin-telegr
 
 ## 🎯 Contributing
 
-**Important**: All pull requests must be submitted to the `dev` branch. PRs to `main` will be automatically rejected.
+**Important**: Submit pull requests to the `dev` branch following the repository workflow.
 
 Contributions are welcome! Your code must pass `bun run typecheck` before merging.
 
@@ -185,7 +185,7 @@ Like this project? **Leave a star**! ⭐⭐⭐⭐⭐
 There are several ways you can support this project:
 
 - [Become a sponsor](https://github.com/sponsors/wgtechlabs) and get some perks! 💖
-- [Buy me a coffee](https://buymeacoffee.com/wgtechlabs) if you just love what we do! ☕
+- [Buy us a coffee](https://buymeacoffee.com/wgtechlabs) if you love what we do! ☕
 
 ## ⭐ GitHub Star Nomination
 
@@ -193,7 +193,7 @@ Found this project helpful? Consider nominating me **(@warengonzaga)** for the [
 
 ## 📃 License
 
-This project is licensed under the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
+This project is licensed under the [GNU General Public License v3.0 or later](https://opensource.org/license/gpl-3-0).
 
 ## 📝 Author
 
