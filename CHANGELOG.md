@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.1.4] - 2026-07-09
+
+### Changed
+
+- sync community discussions to author sections (#19)
+- pin build-flow workflow and fix package.json format (#17)
+- pin build-flow workflow and fix package.json format (#16)
+- enable floating tags with build-flow-action v0.1.9 (#14)
+
 ## [0.1.3] - 2026-07-04
 
 ### Changed
