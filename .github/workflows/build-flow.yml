@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   build-flow:
-    uses: wgtechlabs/build-flow-action/.github/workflows/app.yml@v0.1.8
+    uses: wgtechlabs/build-flow-action/.github/workflows/app.yml@ca44c5924347699a11e8f247099dbcb5e2761ba3 # v0.1.9
     secrets: inherit
     with:
       ci-profile: auto
@@ -31,6 +31,7 @@ jobs:
       codeql-build-mode: none
       enable-package: false
       enable-container: true
+      container-floating-tags: true
       container-registry: both
 
   publish-latest-tags:
